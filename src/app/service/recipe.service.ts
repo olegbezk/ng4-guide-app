@@ -1,14 +1,30 @@
 import {Recipe} from '../recipes/recipe.model';
 import {EventEmitter} from '@angular/core';
+import {Ingredient} from '../shared/ingredient-model';
 
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
 
   private recipes: Recipe[] = [
-    new Recipe('Test recipe', 'Test description', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/' +
-      'Recipe_logo.jpeg/480px-Recipe_logo.jpeg'),
-    new Recipe('Test recipe 2', 'Test description 2', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/' +
-      'Recipe_logo.jpeg/480px-Recipe_logo.jpeg')
+    new Recipe(
+      'Wiener Schnitzel',
+      'Super tasty Schnitzel',
+      'https://upload.wikimedia.org/wikipedia/commons/a/ae/Wiener-Schnitzel02.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('Eggs', 2),
+        new Ingredient('Crusts', 1)
+      ]),
+    new Recipe(
+      'Big Fat Burger',
+      'Burger angus bacon',
+      'http://aht.seriouseats.com/images/20100223-realitycheck-bkxt.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('Bread', 2),
+        new Ingredient('Salad', 1),
+        new Ingredient('Tomatoes', 1)
+      ])
   ];
 
   getRecipes() {

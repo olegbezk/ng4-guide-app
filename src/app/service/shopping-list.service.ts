@@ -5,7 +5,7 @@ export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
   startedEditing = new Subject<number>();
 
-  private ingredients: Ingredient[] = [
+  private ingredients:Ingredient[] = [
     new Ingredient('Apples', 5),
     new Ingredient('Tomatoes', 10)
   ];
@@ -14,31 +14,31 @@ export class ShoppingListService {
     return this.ingredients.slice();
   }
 
-  getIngredient(index: number) {
+  getIngredient(index:number) {
     return this.ingredients[index];
   }
 
-  updateIngredient(index: number, newIngredient: Ingredient) {
+  updateIngredient(index:number, newIngredient:Ingredient) {
     this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
-  addIngredient(ingredient: Ingredient) {
+  addIngredient(ingredient:Ingredient) {
     this.ingredients.push(ingredient);
     this.ingredientsChangesFactory(this.ingredients);
   }
 
-  deleteIngredient(index: number) {
-     this.ingredients.splice(index, 1);
+  deleteIngredient(index:number) {
+    this.ingredients.splice(index, 1);
     this.ingredientsChanged.next(this.ingredients.slice());
   }
 
-  addIngredients(ingredients: Ingredient[]) {
+  addIngredients(ingredients:Ingredient[]) {
     this.ingredients.push(...ingredients);
     this.ingredientsChangesFactory(this.ingredients);
   }
 
-  private ingredientsChangesFactory(ingredients: Ingredient[]) {
+  private ingredientsChangesFactory(ingredients:Ingredient[]) {
     return this.ingredientsChanged.next(ingredients.slice());
   }
 }

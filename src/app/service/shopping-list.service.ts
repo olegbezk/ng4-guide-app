@@ -28,6 +28,11 @@ export class ShoppingListService {
     this.ingredientsChangesFactory(this.ingredients);
   }
 
+  deleteIngredient(index: number) {
+     this.ingredients.splice(index, 1);
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
+
   addIngredients(ingredients: Ingredient[]) {
     this.ingredients.push(...ingredients);
     this.ingredientsChangesFactory(this.ingredients);

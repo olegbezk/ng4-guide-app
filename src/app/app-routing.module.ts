@@ -18,7 +18,7 @@ const appRoutes: Routes = [
     {path: ':id', component: RecipeDetailComponent},
     {path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService]}
   ]},
-  {path: 'shopping-list', component: ShoppingListComponent},
+  {path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuardService]},
   {path: 'signup', component: SignupComponent},
   {path: 'signin', component: SigninComponent},
 ];

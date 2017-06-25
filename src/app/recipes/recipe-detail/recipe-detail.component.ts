@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Recipe} from '../recipe.model';
 import {RecipeService} from '../../service/recipe.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {AuthService} from '../../service/auth-service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -12,9 +13,10 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
   id: number;
 
-  constructor(private recipeService:RecipeService,
-              private route:ActivatedRoute,
-              private router:Router) {
+  constructor(private recipeService: RecipeService,
+              private route: ActivatedRoute,
+              private router: Router, 
+              private authService: AuthService) {
   }
 
   ngOnInit() {

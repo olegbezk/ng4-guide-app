@@ -21,6 +21,7 @@ import { DataStorageService } from './service/data-storage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './service/auth-service';
+import {AuthGuardService} from "./service/auth-guard.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AuthService } from './service/auth-service';
     ShoppingListService,
     RecipeService,
     DataStorageService,
-    AuthService
+    AuthService, 
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

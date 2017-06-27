@@ -42,4 +42,8 @@ export class RecipeDetailComponent implements OnInit {
     this.router.navigate(['/recipes']);
   }
 
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
+  }
+
 }

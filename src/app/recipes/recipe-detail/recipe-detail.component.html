@@ -21,7 +21,7 @@
         class="btn-primary dropdown-toggle">
         Manage Recipe <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu" *ngIf="authService.isAuthenticated()">
+      <ul class="dropdown-menu" *ngIf="isAuthenticated()">
         <li><a (click)="addToShoppingList()" style="cursor: pointer;">To Shopping List</a></li>
         <li><a (click)="editRecipe()" style="cursor: pointer;">Edit Recipe</a></li>
         <li><a (click)="deleteRecipe()" style="cursor: pointer;">Delete Recipe</a></li>

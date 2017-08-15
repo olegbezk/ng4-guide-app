@@ -2,7 +2,7 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
-## Live working example
+## Live example
 [Recipe Book](http://angular-recipe-book-deployment.s3-website.eu-central-1.amazonaws.com)
 
 ## Development server
